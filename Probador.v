@@ -2,7 +2,9 @@
 module Probador(
 
     input [15:0] data_out,
+    input [15:0] data_out_estructural,
     input [3:0] control_out,
+    input [3:0] control_out_estructural,
     output reg clk,
 	output reg reset,
 	output reg [15:0] data_in

@@ -1,29 +1,33 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Sun Jun 20 05:49:30 2021
+[*] Sun Jun 20 06:44:49 2021
 [*]
 [dumpfile] "C:\Users\tovar\OneDrive\Documents\UCR\CircuitosDigitales2\Tarea7\StateMachine\bus_control.vcd"
-[dumpfile_mtime] "Sun Jun 20 05:47:42 2021"
-[dumpfile_size] 3121
+[dumpfile_mtime] "Sun Jun 20 06:42:57 2021"
+[dumpfile_size] 8162
 [savefile] "C:\Users\tovar\OneDrive\Documents\UCR\CircuitosDigitales2\Tarea7\StateMachine\PruebasMuxParametrizado.gtkw"
 [timestart] 0
 [size] 1000 600
-[pos] 1331 -503
-*-11.857315 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] 1271 -603
+*-12.353089 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 197
-[signals_width] 158
+[signals_width] 254
 [sst_expanded] 1
 [sst_vpaned_height] 153
 @28
 BancoPruebas.clk
+[color] 6
 BancoPruebas.reset
 @22
-[color] 2
+[color] 4
 BancoPruebas.data_in[15:0]
-[color] 3
+[color] 2
 BancoPruebas.data_out[15:0]
-@23
-[color] 6
+[color] 2
 BancoPruebas.control_out[3:0]
+[color] 3
+BancoPruebas.data_out_estructural[15:0]
+[color] 3
+BancoPruebas.control_out_estructural[3:0]
 [pattern_trace] 1
 [pattern_trace] 0

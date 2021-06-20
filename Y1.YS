@@ -1,0 +1,8 @@
+read_verilog bus_control.v;
+hierarchy -check -top bus_control;
+proc; opt; fsm; opt; memory; opt
+techmap; opt;
+dfflibmap -liberty cmos_cells.lib;
+abc -liberty cmos_cells.lib;
+clean;
+write_verilog bus_control_estructural.v;
