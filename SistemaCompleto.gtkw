@@ -1,0 +1,52 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue Jun 22 06:04:33 2021
+[*]
+[dumpfile] "C:\Users\tovar\OneDrive\Documents\UCR\CircuitosDigitales2\Tarea7\StateMachine\bus_control.vcd"
+[dumpfile_mtime] "Tue Jun 22 05:54:27 2021"
+[dumpfile_size] 31524
+[savefile] "C:\Users\tovar\OneDrive\Documents\UCR\CircuitosDigitales2\Tarea7\StateMachine\SistemaCompleto.gtkw"
+[timestart] 0
+[size] 1078 600
+[pos] -1 -1
+*-12.353089 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 254
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+BancoPruebas.clk
+[color] 6
+BancoPruebas.reset
+@22
+[color] 4
+BancoPruebas.data_in[15:0]
+[color] 2
+BancoPruebas.data_out[15:0]
+[color] 2
+BancoPruebas.control_out[3:0]
+[color] 3
+BancoPruebas.data_out_estructural[15:0]
+[color] 3
+BancoPruebas.control_out_estructural[3:0]
+[color] 7
+BancoPruebas.next_state[4:0]
+[color] 7
+BancoPruebas.state[4:0]
+@28
+[color] 7
+BancoPruebas.next_error
+[color] 7
+BancoPruebas.error
+@22
+[color] 5
+BancoPruebas.next_state_estructural[4:0]
+[color] 5
+BancoPruebas.state_estructural[4:0]
+@28
+[color] 5
+BancoPruebas.next_error_estructural
+[color] 5
+BancoPruebas.error_estructural
+[pattern_trace] 1
+[pattern_trace] 0

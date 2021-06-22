@@ -1,7 +1,8 @@
 BANCO  = bancopruebas.v
 YS1 = Y1.ys
+YS2 = Y2.ys
 
-all: prueba_buscontrol
+all: prueba_statemachine
 
 
 prueba_buscontrol:  Probador.v
@@ -23,5 +24,32 @@ prueba_buscontrol:  Probador.v
 	@echo ----------------------------------
 	emacs --batch $(BANCO) -f verilog-batch-auto 
 	iverilog -o prueba.vvp $(BANCO) cmos_cells.v bus_control.v bus_control_estructural.v
+	vvp prueba.vvp
+	gtkwave bus_control.vcd
+
+prueba_statemachine: 
+	@echo ----------------------------------
+	@echo Corriendo Sintesis Completa para la Maquina de Estados: 
+	@echo ----------------------------------
+	yosys $(YS2)
+	@echo ----------------------------------
+	@echo Cambiando nombre al module para evitar problemas:
+	@echo ----------------------------------
+	sed -i 's/state/state_estructural/' state_machine_estructural.v
+	sed -i 's/state,/state_estructural,/' state_machine_estructural.v
+	sed -i 's/state_machine/state_machine_estructural/' state_machine_estructural.v
+	sed -i 's/state_estructural_machine/state_machine_estructural/' state_machine_estructural.v
+	sed -i 's/error/error_estructural/' state_machine_estructural.v
+	sed -i 's/next_error,/next_error_estructural,/' state_machine_estructural.v
+	sed -i 's/next_state)/next_state_estructural)/' state_machine_estructural.v
+	sed -i 's/next_state,/next_state_estructural,/' state_machine_estructural.v
+	
+
+	
+	@echo ----------------------------------
+	@echo Corriendo pruebas para la maquina de estado :
+	@echo ----------------------------------
+	emacs --batch $(BANCO) -f verilog-batch-auto 
+	iverilog -o prueba.vvp $(BANCO) cmos_cells.v bus_control.v bus_control_estructural.v state_machine.v state_machine_estructural.v
 	vvp prueba.vvp
 	gtkwave bus_control.vcd

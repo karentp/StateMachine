@@ -5,6 +5,10 @@ module Probador(
     input [15:0] data_out_estructural,
     input [3:0] control_out,
     input [3:0] control_out_estructural,
+    input error,
+    input error_estructural,
+    input next_error,
+    input [4:0] state, next_state, state_estructural, next_state_estructural,
     output reg clk,
 	output reg reset,
 	output reg [15:0] data_in
@@ -23,6 +27,7 @@ initial begin
 
         reset <= 1'b1;
         data_in <= 16'hFBA0; 
+
 
     @(posedge clk);	
 
@@ -48,13 +53,16 @@ initial begin
 
         reset <= 1'b1;
         data_in <= 16'hFDC9;
-    
-    
 
     @(posedge clk);
 
-    reset <= 1'b0;
-	data_in <= 16'h000;
+        reset <= 1'b0;
+        data_in <= 16'h000;
+    
+    @(posedge clk);
+
+        reset <= 1'b0;
+        data_in <= 16'h000;
 
 	$finish;
 end  
