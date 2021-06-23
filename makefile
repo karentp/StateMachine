@@ -2,7 +2,7 @@ BANCO  = bancopruebas.v
 YS1 = Y1.ys
 YS2 = Y2.ys
 
-all: prueba_statemachine
+all: ver_sistema_completo
 
 
 prueba_buscontrol:  Probador.v
@@ -23,9 +23,8 @@ prueba_buscontrol:  Probador.v
 	@echo Corriendo pruebas del bus control :
 	@echo ----------------------------------
 	emacs --batch $(BANCO) -f verilog-batch-auto 
-	iverilog -o prueba.vvp $(BANCO) cmos_cells.v bus_control.v bus_control_estructural.v
+	iverilog -o prueba.vvp $(BANCO) cmos_cells.v bus_control.v bus_control_estructural.v state_machine.v state_machine_estructural.v
 	vvp prueba.vvp
-	gtkwave bus_control.vcd
 
 prueba_statemachine: 
 	@echo ----------------------------------
@@ -52,4 +51,16 @@ prueba_statemachine:
 	emacs --batch $(BANCO) -f verilog-batch-auto 
 	iverilog -o prueba.vvp $(BANCO) cmos_cells.v bus_control.v bus_control_estructural.v state_machine.v state_machine_estructural.v
 	vvp prueba.vvp
-	gtkwave bus_control.vcd
+
+ver_gtkwave_parametrizado:
+	$(MAKE) prueba_buscontrol
+	gtkwave bus_control.vcd PruebasMuxParametrizado.gtkw
+
+ver_gtkwave_maquina_estado:
+	$(MAKE) prueba_statemachine
+	gtkwave bus_control.vcd PruebasMaquina.gtkw
+
+ver_sistema_completo:
+	$(MAKE) prueba_statemachine
+	$(MAKE) prueba_buscontrol
+	gtkwave bus_control.vcd SistemaCompleto.gtkw
